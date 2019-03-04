@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">top100cryptos</string>
+    <string name="the_index_is_calculated" translatable="false">The rating TOP-100 cryptos by market capitalization. \n
+        Powered by CoinGecko
+        API
+    </string>
+    <string name="rate_this_app_button_txt">Rate This App</string>
+    <string name="about_menu_item">About</string>
+    <string name="bitcoin_sum">BAT</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
