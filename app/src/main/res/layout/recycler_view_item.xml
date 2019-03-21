@@ -4,7 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
     <ImageView
             android:id="@+id/ivCurrencyIcon"
@@ -43,7 +43,7 @@
             android:id="@+id/tvCurrencyMarketCap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="$ 278839000"
+            tools:text="278839000"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
@@ -63,7 +63,7 @@
             android:id="@+id/tvMarketCapRank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Market Cap "
+            tools:text="Market Cap: $ "
             app:layout_constraintTop_toTopOf="@id/tvCurrencyMarketCap"
             app:layout_constraintBottom_toBottomOf="@id/tvCurrencyMarketCap"
             app:layout_constraintEnd_toStartOf="@id/tvCurrencyMarketCap"

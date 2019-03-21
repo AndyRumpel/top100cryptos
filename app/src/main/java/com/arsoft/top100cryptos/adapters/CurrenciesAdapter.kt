@@ -1,9 +1,11 @@
 package com.arsoft.top100cryptos.adapters
 
+import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.arsoft.top100cryptos.R
+import com.arsoft.top100cryptos.R.*
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.recycler_view_item.view.*
 
@@ -11,7 +13,7 @@ class CurrenciesAdapter: BaseAdapter<CurrenciesAdapter.CurrencyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CurrencyViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_item, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(layout.recycler_view_item, parent, false)
         return CurrencyViewHolder(v)
     }
 
@@ -33,6 +35,8 @@ class CurrenciesAdapter: BaseAdapter<CurrenciesAdapter.CurrencyViewHolder>() {
                 view.tvCurrencyName.text = item.name
                 view.tvCurrencyMarketCap.text = item.marketCap
                 view.tvCurrencyPrice.text = item.price.toString()
+                view.tvMarketCapRank.text = "Market Cap: \$ "
+                view.tvPrice.text = "Price \$ "
             }
         }
     }

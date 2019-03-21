@@ -18,10 +18,10 @@ interface CoinGeckoApi {
     ): Observable<List<GeckoCoin>>
 
     //requesting data for shedule
-    @GET("coins/{id}/market)chart")
+    @GET("coins/{id}/market_chart")
     fun getCoinMarketChart(
         @Path("id") id: String,
         @Query("vs_currency") vs: String = "usd",
         @Query("days") days: String = "max"
-    ): Observable<List<GeckoCoinChart>>
+    ): Observable<GeckoCoinChart>
 }

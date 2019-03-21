@@ -32,14 +32,18 @@ class RestModule {
                 .connectTimeout(60, TimeUnit.SECONDS)
                 .build()
 
+
     @Provides
     @Singleton
+    @Named("COINGECKO_API")
     fun provideGeckoRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit =
             Retrofit.Builder()
                 .baseUrl("https://api.coingecko.com/api/v3/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(okHttpClient)
                 .build()
+
 
     @Provides
     @Singleton
