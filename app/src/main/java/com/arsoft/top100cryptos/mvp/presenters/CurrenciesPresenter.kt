@@ -22,7 +22,7 @@ class CurrenciesPresenter: CurrenciesContract.Presenter() {
     }
 
 
-    override fun makeList() {
+    override fun makeList() { 
         view.showProgress()
         subscribe(geckoApi.getCoinMarket()
             .subscribeOn(Schedulers.io())
