@@ -14,6 +14,7 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.highlight.Highlight
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import kotlinx.android.synthetic.main.activity_chart.*
+import kotlinx.android.synthetic.main.recycler_view_item.*
 import java.text.DecimalFormat
 import javax.inject.Inject
 
@@ -59,7 +60,6 @@ class ChartActivity: AppCompatActivity(), OnChartValueSelectedListener, LatestCh
         tvAthChange.text = df.format(athChangePercentage)
         tvCirculatingSupply.text = df.format(circulatingSupply)
         tvTotalSupply.text = totalSupply.toString()
-
         presenter.makeChart(intent.getStringExtra("id"))
 
         latestChart.initChart(chartCurrency)

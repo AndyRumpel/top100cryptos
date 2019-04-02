@@ -7,7 +7,8 @@
         android:clipToPadding="false"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragments.CurrenciesListFragment">
+        tools:context=".fragments.CurrenciesListFragment"
+        android:background="@color/black_rv_bg">
 
 
 </android.support.v7.widget.RecyclerView>

@@ -2,7 +2,7 @@ package com.arsoft.top100cryptos.chart
 
 import android.content.Context
 import android.graphics.Color
-import com.arsoft.top100cryptos.R
+
 import com.arsoft.top100cryptos.di.App
 import com.arsoft.top100cryptos.helpers.YearValueFormatter
 import com.github.mikephil.charting.charts.LineChart
@@ -12,6 +12,13 @@ import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import javax.inject.Inject
+
+import android.support.v4.content.ContextCompat
+import android.graphics.drawable.Drawable
+import com.github.mikephil.charting.utils.Utils.getSDKInt
+
+import com.github.mikephil.charting.utils.Utils
+
 
 class LatestChart {
 
@@ -51,7 +58,7 @@ class LatestChart {
         chart.maxHighlightDistance = 300F
 
         val data = LineData()
-        data.setValueTextColor(Color.BLACK)
+        data.setValueTextColor(Color.WHITE)
 
         //add empty data
         chart.data = data
@@ -61,10 +68,10 @@ class LatestChart {
 
         //add marker
         chart.setDrawMarkers(true)
-        chart.marker = MyMarkerView(context, R.layout.custom_marker_view)
+        chart.marker = MyMarkerView(context, com.arsoft.top100cryptos.R.layout.custom_marker_view)
 
         val x1 = chart.xAxis
-        x1.textColor = Color.BLACK
+        x1.textColor = Color.WHITE
         x1.position = XAxis.XAxisPosition.BOTTOM
         x1.setDrawGridLines(false)
         x1.valueFormatter = formatter
@@ -74,12 +81,13 @@ class LatestChart {
         x1.setAvoidFirstLastClipping(true)
         x1.isEnabled = true
 
-        val leftAxis = chart.axisLeft
-        leftAxis.textColor = Color.BLACK
-        leftAxis.setDrawGridLines(true)
+//        val leftAxis = chart.axisLeft
+//        leftAxis.textColor = Color.BLACK
+//        leftAxis.setDrawGridLines(true)
 
         val rightAxis = chart.axisRight
         rightAxis.isEnabled = true
+
     }
 
     //add data to chart
@@ -102,24 +110,28 @@ class LatestChart {
             chart.moveViewToX(date)
 
             chart.highlightValue(date, 0)
+
         }
     }
 
     private fun createSet(): LineDataSet {
         val set = LineDataSet(null, "Price, USD")
+        val drawable = ContextCompat.getDrawable(context, com.arsoft.top100cryptos.R.drawable.fade_red)
 
         set.mode = LineDataSet.Mode.CUBIC_BEZIER
         set.cubicIntensity = 0.2F
         set.setDrawFilled(true)
+        set.fillDrawable = drawable
         set.setDrawCircles(false)
         set.lineWidth = 1.8F
         set.circleRadius = 4F
-        set.setCircleColor(Color.BLACK)
+        set.setCircleColor(Color.WHITE)
         set.highlightLineWidth = 1.2F
-        set.highLightColor = context.resources.getColor(R.color.colorAccent)
+        set.highLightColor = context.resources.getColor(com.arsoft.top100cryptos.R.color.colorAccent)
         set.color = Color.BLACK
-        set.fillColor =  Color.BLACK
+//      set.fillColor =  Color.BLACK
         set.enableDashedHighlightLine(10F, 5F, 0F)
+
         set.fillAlpha = 100
         set.setDrawHorizontalHighlightIndicator(true)
         set.setFillFormatter {_, _ ->

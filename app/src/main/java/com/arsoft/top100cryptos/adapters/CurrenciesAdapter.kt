@@ -60,10 +60,12 @@ class CurrenciesAdapter: BaseAdapter<CurrenciesAdapter.CurrencyViewHolder>() {
             let {
                 item as Currency
                 Glide.with(view.context).load(item.image).into(view.ivCurrencyIcon)
-                view.tvCurrencySym.text = item.symbol
+                view.tvCurrencySym.text = item.symbol.toUpperCase()
                 view.tvCurrencyName.text = item.name
                 view.tvCurrencyMarketCap.text = item.marketCap
                 view.tvCurrencyPrice.text = item.price.toString()
+                view.tvMarketCapRank.text = "Market Cap: $"
+                view.tvPrice.text = "Price: $"
                 id = item.id
                 symbol = item.symbol
                 name = item.name

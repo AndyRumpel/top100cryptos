@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#1F1F28</color>
+    <color name="colorPrimaryDark">#20202A</color>
     <color name="colorAccent">#D81B60</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="black_item_bg">#20202A</color>
+    <color name="card_view_txt">#E3E3F7</color>
+    <color name="black_rv_bg">#1F1F28</color>
 </resources>
